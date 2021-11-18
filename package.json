@@ -8,9 +8,8 @@
     "build": "webpack --config config/webpack.prod.js",
     "build-staging": "webpack --config config/webpack.stag.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettify": "yarn prettier \"**/*.*(jsx|ts|tsx)\" --ignore-path=.prettierignore --write",
-    "lint": "eslint src --ext .jsx,.ts,.tsx && yarn prettify",
-    "lint-fix": "eslint src --ext .jsx,.ts,.tsx --fix && yarn prettify"
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint-fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix"
   },
   "author": "Raafi Muhammad",
   "license": "ISC",
@@ -21,7 +20,7 @@
   },
   "lint-staged": {
     "*.{jsx,ts,tsx}": [
-      "lint-fix"
+      "eslint --fix"
     ]
   },
   "dependencies": {
@@ -47,6 +46,8 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-router-config": "^5.0.3",
     "@types/react-router-dom": "^5.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "autoprefixer": "^10.4.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
@@ -56,11 +57,11 @@
     "css-minimizer-webpack-plugin": "^3.1.4",
     "dotenv-webpack": "^7.0.3",
     "eslint": "^8.2.0",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-airbnb": "^19.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
@@ -72,7 +73,6 @@
     "postcss": "^8.3.11",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.2.0",
-    "prettier": "2.4.1",
     "react-refresh": "^0.11.0",
     "sass-loader": "^12.3.0",
     "terser-webpack-plugin": "^5.2.5",
