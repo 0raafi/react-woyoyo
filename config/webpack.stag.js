@@ -11,7 +11,7 @@ module.exports = merge(common, {
     mode: 'production',
     devtool: false,
     output: {
-        path: paths.build,
+        path: paths.build + '/stagings',
         publicPath: '/',
         filename: '[name].[contenthash].bundle.js',
     },

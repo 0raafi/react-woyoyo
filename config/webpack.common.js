@@ -43,11 +43,6 @@ module.exports = {
             { test: /\.(woff(2)?|eot|ttf|otf|svg)$/, type: 'asset/inline' },
         ]
     },
-    output: {
-        path: paths.build,
-        filename: '[name].bundle.js',
-        publicPath: '/',
-    },
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
