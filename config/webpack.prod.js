@@ -17,7 +17,7 @@ module.exports = merge(common, {
     },
     plugins: [
         new Dotenv({
-            path: './.env.production',
+            path: paths.env + '/.env.production',
         }),
         new MiniCssExtractPlugin({
             filename: 'styles/[name].[contenthash].css',
