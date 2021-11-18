@@ -5,7 +5,7 @@ import routes from './routes';
 export default function App() {
   return (
     <BrowserRouter>
-      {renderRoutes(routes) }
+      {renderRoutes(routes)}
     </BrowserRouter>
   );
 }

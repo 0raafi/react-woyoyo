@@ -9,7 +9,7 @@
     "start": "webpack server --config config/webpack.dev.js --open",
     "build": "webpack --config config/webpack.prod.js",
     "build-staging": "webpack --config config/webpack.stag.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint-fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix"
   },
@@ -22,6 +22,13 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix"
     ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "dependencies": {
     "@apollo/client": "^3.4.17",
@@ -41,6 +48,9 @@
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "@types/loadable__component": "^5.13.4",
     "@types/react": "^17.0.35",
     "@types/react-dom": "^17.0.11",
@@ -50,6 +60,7 @@
     "@typescript-eslint/parser": "^5.4.0",
     "autoprefixer": "^10.4.0",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.0.0",
@@ -67,6 +78,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
+    "jest": "^27.3.1",
     "lint-staged": "^12.0.2",
     "mini-css-extract-plugin": "^2.4.4",
     "node-sass": "^6.0.1",
